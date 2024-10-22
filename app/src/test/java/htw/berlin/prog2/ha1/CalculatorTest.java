@@ -104,6 +104,25 @@ class CalculatorTest {
         assertEquals(expexted, actual);
     }
 
+    @Test
+    @DisplayName("should display result of Multiplication and Addition of 3 Numbers")
+    void testMultipleNumbers() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(5);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(2);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(3);
+        calc.pressEqualsKey();
+
+        String expected = "13";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+
+        
+    }
     //TODO hier weitere Tests erstellen
 }
 
