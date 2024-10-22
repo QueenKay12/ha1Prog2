@@ -1,5 +1,6 @@
 package htw.berlin.prog2.ha1;
 
+import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -122,6 +123,24 @@ class CalculatorTest {
         assertEquals(expected, actual);
 
         
+    }
+
+    @Test
+    @DisplayName("should show Error for division by 0 in between caclulation of more then 2 numbers")
+    void errorInBetween() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(9);
+        calc.pressBinaryOperationKey("/");
+        calc.pressDigitKey(0);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(3);
+        calc.pressEqualsKey();
+
+        String expected = "Error";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
     }
     //TODO hier weitere Tests erstellen
 }
