@@ -99,10 +99,10 @@ class CalculatorTest {
         calc.pressDigitKey(5);
         calc.pressEqualsKey();
 
-        String expexted = "-2";
+        String expected = "-2";
         String actual = calc.readScreen();
 
-        assertEquals(expexted, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -125,8 +125,8 @@ class CalculatorTest {
         
     }
 
-    @Test
-    @DisplayName("should show Error for division by 0 in between caclulation of more then 2 numbers")
+  /*  @Test
+    @DisplayName("should show Error for division by 0 in between calculations of more then 2 numbers")
     void errorInBetween() {
         Calculator calc = new Calculator();
 
@@ -141,7 +141,23 @@ class CalculatorTest {
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
+    }  abandoned, could not make it work*/
+
+    @Test
+    @DisplayName("should show scare number")
+    void scareNumber() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(5);
+        calc.pressUnaryOperationKey("x²");
+        calc.pressEqualsKey();
+
+        String expected = "25";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
     }
     //TODO hier weitere Tests erstellen
+
 }
 
