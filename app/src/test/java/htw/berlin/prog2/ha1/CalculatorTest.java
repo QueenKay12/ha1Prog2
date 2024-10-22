@@ -88,6 +88,21 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("should display negative Number after subtracting bigger Number from smaller one")
+    void testNegativeNumber() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(3);
+        calc.pressBinaryOperationKey("-");
+        calc.pressDigitKey(5);
+        calc.pressEqualsKey();
+
+        String expexted = "-2";
+        String actual = calc.readScreen();
+
+        assertEquals(expexted, actual);
+    }
 
     //TODO hier weitere Tests erstellen
 }
