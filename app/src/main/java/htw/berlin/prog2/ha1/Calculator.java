@@ -14,8 +14,6 @@ public class Calculator {
 
     private String latestOperation = "";
 
-    private static double pow = 2;
-
     /**
      * @return den aktuellen Bildschirminhalt als String
      */
